@@ -4,12 +4,22 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>~categories</title>
+  <title> <%= category %> </title>
 </head>
 
 <body>
 
-    <h1>categories menus</h1>
+  <%- include('./partials/nav') %>
+  
+  <h1> <%= category %> </h1>
+
+  <% menuItems.forEach((item) => { %>
+    <h4> <%= item.name %> </h4>
+    <p>
+        Price: $<%= (Math.round(item.price * 100) / 100).toFixed(2) %> | Rating: <%= item.rating %>/5
+    </p>
+    <p> <%= item.details %> </p>
+  <% }); %>
 
 </body>
 </html>

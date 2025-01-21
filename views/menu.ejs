@@ -6,6 +6,7 @@
   <title>Menu</title>
 </head>
 <body>
+  <%- include('./partials/nav') %>
   <h1>Full Menu</h1>
 
     <!-- saving exercise 2 level up for later; would have to:
@@ -19,7 +20,7 @@
 
 
 <% menu.forEach((item) => { %>
-    <h4> Name: <%= item.name %> </h4>
+    <h4> <%= item.name %> </h4>
     <p>
         Price: $<%= (Math.round(item.price * 100) / 100).toFixed(2) %> | Rating: <%= item.rating %>/5
     </p>
