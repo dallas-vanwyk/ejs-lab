@@ -71,7 +71,7 @@ const RESTAURANT = {
 }
 
 
-// -------------- Exercise 1: home page ----------------
+
 
 app.get('/', (req, res) => {
     // res.send('Hello There!');
@@ -79,7 +79,9 @@ app.get('/', (req, res) => {
     // console.log(RESTAURANT)
 });
 
-
+app.get('/menu', (req, res) => {
+    res.render('menu.ejs', RESTAURANT);
+});
 
 
 

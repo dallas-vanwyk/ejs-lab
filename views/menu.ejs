@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menu</title>
+</head>
+<body>
+  <h1>Full Menu</h1>
+
+    <!-- saving exercise 2 level up for later; would have to:
+     1 - count/separate the categories with a reduce
+     2 - forEach the reduced categories into H2 sections
+     3 - inside there, then filter the menu array for the type
+
+     come to think of it, maybe it'd be better to do some of that processing work in the server.js rather than menu.ejs....
+
+     gotta MVP first -->
+
+
+<% menu.forEach((item) => { %>
+    <h4> Name: <%= item.name %> </h4>
+    <p>
+        Price: $<%= (Math.round(item.price * 100) / 100).toFixed(2) %> | Rating: <%= item.rating %>/5
+    </p>
+    <p> <%= item.details %> </p>
+<% }); %>
+<% %>
+<% %>
+
+</body>
+</html>
