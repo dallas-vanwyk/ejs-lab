@@ -87,11 +87,15 @@ app.get('/menu', (req, res) => {
     // const categories = RESTAURANT.menu.reduce(() => {
     // });
 
-    const menuItems = RESTAURANT.menu;
+    // categories.forEach((category) => {
+
+    // });
+
+    const menuWhole = RESTAURANT.menu;
 
     const localsObj = {
         categories,
-        menuItems
+        menuWhole
     };
     res.render('menu.ejs', localsObj);
 });

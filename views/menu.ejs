@@ -20,11 +20,31 @@
 
 
   <% categories.forEach((category) => { %>
-    <p> <%= // category %> </p>
-  <% }) %>
+    <h2> <%= String(category).charAt(0).toUpperCase() + String(category).slice(1) %> </h2>
+    <% const menuItems = menuWhole.filter((item) => item.category === category) %>
+    <% // console.log(category) %>
+    <% // console.log(menuItems) %>
+
+    <!-- this works for now, although I tried to make it DRY below -->
+    <% menuItems.forEach((item) => { %>
+      <h3>
+        <%= item.name %> <%= item.rating === 5 ? '⭐' : '' %>
+      </h3>
+      <p>
+          Price: $<%= (Math.round(item.price * 100) / 100).toFixed(2) %> | Rating: <%= item.rating %>/5
+      </p>
+      <p> <%= item.details %> </p>
+    <% }); %>
 
 
-  <%- include('./partials/menuFormat') %>
+    <!-- so apparently include() doesn't play by the same scope rules? -->
+     <!-- I was really proud of my DRY here but I will just have to come back to it :/ -->
+    <%- // include('./partials/menuFormat') %>
+
+    <% }) %>
+
+<!-- this is leftover from the un-grouped whole menu page -->
+  <%- // include('./partials/menuFormat') %>
 
 </body>
 </html>
