@@ -83,7 +83,9 @@ app.get('/menu', (req, res) => {
     res.render('menu.ejs', RESTAURANT);
 });
 
-
+app.get('/menu/:category', (req, res) => {
+    res.render('category.ejs', RESTAURANT);
+});
 
 
 
