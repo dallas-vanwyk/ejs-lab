@@ -9,16 +9,6 @@
   <%- include('./partials/nav') %>
   <h1>Full Menu</h1>
 
-    <!-- saving exercise 2 level up for later; would have to:
-     1 - count/separate the categories with a reduce
-     2 - forEach the reduced categories into H2 sections
-     3 - inside there, then filter the menu array for the type
-
-     come to think of it, maybe it'd be better to do some of that processing work in the server.js rather than menu.ejs....
-
-     gotta MVP first -->
-
-
   <% categories.forEach((category) => { %>
     <h2> <%= String(category).charAt(0).toUpperCase() + String(category).slice(1) %> </h2>
     <% const menuItems = menuWhole.filter((item) => item.category === category) %>
@@ -37,8 +27,8 @@
     <% }); %>
 
 
-    <!-- so apparently include() doesn't play by the same scope rules? -->
-     <!-- I was really proud of my DRY here but I will just have to come back to it :/ -->
+    <!-- so apparently include() doesn't play by the same scope rules?
+     I was really proud of my DRY here but I will just have to come back to it :/ -->
     <%- // include('./partials/menuFormat') %>
 
     <% }) %>
