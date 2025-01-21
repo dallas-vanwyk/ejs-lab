@@ -80,12 +80,18 @@ app.get('/', (req, res) => {
 });
 
 app.get('/menu', (req, res) => {
-    res.render('menu.ejs', RESTAURANT);
+
+    const menuItems = RESTAURANT.menu;
+    const localsObj = {
+        menuItems
+    }
+    res.render('menu.ejs', localsObj);
 });
 
 app.get('/menu/:category', (req, res) => {
 
     const menuItems = RESTAURANT.menu.filter((item) => item.category === req.params.category);
+
     let category = String(req.params.category).charAt(0).toUpperCase() + String(req.params.category).slice(1);
 
     const localsObj = {
