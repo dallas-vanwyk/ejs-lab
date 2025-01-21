@@ -81,10 +81,18 @@ app.get('/', (req, res) => {
 
 app.get('/menu', (req, res) => {
 
+    const categories = ['mains','sides','desserts'];
+    // this static categories array works for now
+    // Future improvement: make it work for any categories
+    // const categories = RESTAURANT.menu.reduce(() => {
+    // });
+
     const menuItems = RESTAURANT.menu;
+
     const localsObj = {
+        categories,
         menuItems
-    }
+    };
     res.render('menu.ejs', localsObj);
 });
 
